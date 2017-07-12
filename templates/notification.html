@@ -6,6 +6,7 @@
 	    {% load staticfiles %}
     <link href="{% static 'website/notification.css' %}" rel="stylesheet" type="text/css">
    	<meta charset="UTF-8">
+   	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
@@ -100,24 +101,30 @@
 </div><!-- end container -->
 
 
-<div class="body" style="min-height:300px">
+<div class="body" >
 	<div class="content" style="margin-bottom:5%">
 		<div id="Container_body">
 			<div>
 				<h1 class="form_title">Notifications</h1>
 			</div>
-			<hr>	
+			<hr>
 			<!-- Start Iteration -->
 			{% for notif in noti %}
 			<div class="row field">
-				<div class="col-xs-2" style="font-size:100%">
-					{{ notif.date | date:"SHORT_DATE_FORMAT"}}
-				</div>
-				<div class="col-xs-2">
-				{{notif.sender}}
-				</div>
-				<div class="col-xs-8">
-				{{notif.note}}
+                <table class="table table-striped" style="padding:0;margin-left:5%;width:95%;">
+					<tbody>
+					<tr>
+						<th style="width:45%">
+							{{notif.sender}}:
+						</th>
+						<td class="dat" style="font-size:100%">
+						{{ notif.date | date:"SHORT_DATE_FORMAT"}}
+						</td>
+					</tr>
+					</tbody>
+				</table>
+				<div  style="padding:0;margin-left:10%;width:95%;">
+					-{{ notif.note}}
 				</div>
 			</div>
 			<hr style="height:2px;">

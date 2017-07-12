@@ -6,6 +6,7 @@
     {% load staticfiles %}
     <link href="{% static 'website/homeadmin.css' %}" rel="stylesheet" type="text/css">
    	<meta charset="UTF-8">
+   	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
@@ -184,7 +185,7 @@
 				{% for team in team_list %}
 					<h4 style="font-weight:bold;width:100%;text-align:center">{{ team.t_name }}</h4>
 				<table class="table table-striped">
-					<tbody>	
+					<tbody>
 					  <tr>
 						<td><h5 style="font-weight:bold">Team Leader</h5></td>
 						<td>{{ team.t_leader }}</td>
@@ -204,7 +205,7 @@
 							{% endif %}
 						</ul>
 						</td>
-					  </tr>					  
+					  </tr>
 					</tbody>
 				</table>
 				<hr style="height:2px;background:black">
@@ -221,9 +222,10 @@
 				{% endif %}
 				</div>
 			</div>
-			<div class="col-xs-3">
+			<div class="col-sm-3">
 				<h3>Notifications
 				</h3>
+
 				<!-- Start Iteration only	 -->
 				{% if noti %}
 				{% for notif in noti %}
@@ -256,8 +258,10 @@
 					<h4>No notifications yet</h4>
 				</div>
 				{% endif %}
-				<h3>Upload Files
+				<br>
+				<h3 style="text-align:center;line-height:2px">Upload Files
 				</h3>
+				<hr style="height:2px;background:black;">
 				{% if files %}
 				<div class="row uploadfile" style="padding-top:5%">
 					{% for file in files %}

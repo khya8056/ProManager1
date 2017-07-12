@@ -127,15 +127,15 @@ select{
 @media (max-width: 650px) {
 
     .content{
-        width:80%;
+        width:100%;
         padding:0;
-        margin:10%;
+        margin:0%;
 		padding-bottom:3%;
     }
     .huge{
         font-size:170%;
     }
-	
+
     .field{
         padding:1%;
     }
